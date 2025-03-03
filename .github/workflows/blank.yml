@@ -37,7 +37,7 @@ jobs:
       - uses: 'google-github-actions/auth@v2'
         with:
           project_id: 'micro-liberty-291115'
-          workload_identity_provider: 'projects/760746619235/locations/global/workloadIdentityPools/github-actions-test/providers/github'
+          workload_identity_provider: 'projects/760746619235/locations/global/workloadIdentityPools/github-actions-test-dev/providers/github'
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
