@@ -38,16 +38,17 @@ jobs:
       - uses: 'google-github-actions/auth@v2'
         id: auth
         with:
+          token_format: access_token
           project_id: '${{ secrets.PROJECT_ID }}'
           workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}'
 
       - name: Docker Auth
         id: docker-auth
-        uses: 'docker/login-action@v1'
+        uses: 'docker/login-action@v3'
         with:
+          registry: 'us-central1-docker.pkg.dev'
           username: 'oauth2accesstoken'
           password: '${{ steps.auth.outputs.access_token }}'
-          registry: 'us-central1-docker.pkg.dev'
   
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
