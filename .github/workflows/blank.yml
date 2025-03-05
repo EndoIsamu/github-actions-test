@@ -38,6 +38,8 @@ jobs:
       - uses: 'google-github-actions/auth@v2'
         id: auth
         with:
+          token_format: 'access_token'
+          service_account: 'github-actions-test-dev@micro-liberty-291115.iam.gserviceaccount.com'
           project_id: '${{ secrets.PROJECT_ID }}'
           workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}'
 
