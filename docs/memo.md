@@ -17,6 +17,8 @@ GitHub Actions
         - ただ、GitHubの場合はそれとは別にアクセス元の許可設定をしなきゃいけないので、やっておく
     - [[GoogleCloud]GitHub Actions を使用して Cloud Run にデプロイする](https://cloud.google.com/blog/ja/products/devops-sre/deploy-to-cloud-run-with-github-actions/)
         - アクションが古い以外はだいたいこの記事が正しい
+            - というかこのサンプルでいいじゃん...悲しい...まぁ正しいサンプルが正しく分かったということで...
+            - https://github.com/google-github-actions/example-workflows/blob/main/workflows/deploy-cloudrun/cloudrun-declarative.yml
         - こっちの例ではプロジェクトIDとworkload_identity_providerをsecretにしている。その方が当然セキュアなのでそうしておく
         - Google CloudのArtifactoryにdocker loginするときにアクセストークンが必要だった。このときWorkload identityはサービスアカウントの権限を借用してアクセストークンを取得する必要があった
             - access_tokenは明示的に作成しないと生成されない。ここに書いてあった

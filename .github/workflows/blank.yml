@@ -58,8 +58,17 @@ jobs:
           push: true 
           tags: |
             us-central1-docker.pkg.dev/micro-liberty-291115/sample/github-actions-test-hello:latest
-          
-      # Runs a set of commands using the runners shell
+
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v0
+        with:
+          service: 'github-actions-test-hello'
+          region: 'us-central1'
+          # NOTE: If using a pre-built image, update the image name here
+          image: us-central1-docker.pkg.dev/micro-liberty-291115/sample/github-actions-test-hello:latest
+
+          # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
