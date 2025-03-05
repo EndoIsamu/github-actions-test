@@ -1,0 +1,7 @@
+services:
+  app:
+    image: github-actions-test:latest
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
