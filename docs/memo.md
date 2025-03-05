@@ -19,6 +19,8 @@ GitHub Actions
         - アクションが古い以外はだいたいこの記事が正しい
         - こっちの例ではプロジェクトIDとworkload_identity_providerをsecretにしている。その方が当然セキュアなのでそうしておく
         - Google CloudのArtifactoryにdocker loginするときにアクセストークンが必要だった。このときWorkload identityはサービスアカウントの権限を借用してアクセストークンを取得する必要があった
+            - access_tokenは明示的に作成しないと生成されない。ここに書いてあった
+            - https://github.com/google-github-actions/auth?tab=readme-ov-file#sake
         - ということで1個適当なサービスアカウントを作って、このリポジトリのgithub actions dev環境からしか使えないworkflow identity user roleを割り当てた
     - [[GoogleCloud]ID 連携: プロダクトと制限事項](https://cloud.google.com/iam/docs/federated-identity-supported-services?hl=ja)
         - 使えないサービスもあるので気を付けておく
