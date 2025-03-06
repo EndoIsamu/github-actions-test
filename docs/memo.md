@@ -28,6 +28,7 @@ GitHub Actions
         - 使えないサービスもあるので気を付けておく
     - [[GoogleCloud]GitHub Actions からのキーなしの認証の有効化](https://cloud.google.com/blog/ja/products/identity-security/enabling-keyless-authentication-from-github-actions)
     - [[GoogleCloud]デプロイメント パイプラインとの Workload Identity 連携を構成する](https://cloud.google.com/iam/docs/workload-identity-federation-with-deployment-pipelines?hl=ja)
+        - 上では環境単位と書いたが、「特定のグループに属する/属性を持つ不特定多数」に許可する、ということもできるはず
     - [Workload Identity 連携を利用して GitHub Actions を動かす](https://zenn.dev/cloud_ace/articles/7fe428ac4f25c8)
 - [GithubActions で CloudRun を CI/CD する](https://zenn.dev/jinwatanabe/articles/646b4662f05a8c)
 
