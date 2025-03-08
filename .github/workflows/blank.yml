@@ -31,10 +31,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       - uses: 'google-github-actions/auth@v2'
         id: auth
         with:
@@ -65,11 +61,7 @@ jobs:
         with:
           service: 'github-actions-test-hello'
           region: 'us-central1'
-          # NOTE: If using a pre-built image, update the image name here
           image: us-central1-docker.pkg.dev/micro-liberty-291115/sample/github-actions-test-hello:latest
 
-          # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Show Output
+        run: echo ${{ steps.deploy.outputs.url }}
